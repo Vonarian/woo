@@ -1,0 +1,15 @@
+name: woo
+description: The Woo package. Most favorite of all time!
+version: 1.0.0
+repository: https://github.com/Vonarian/woo
+
+environment:
+  sdk: ^3.8.1
+
+# Add regular dependencies here.
+dependencies:
+  # path: ^1.8.0
+
+dev_dependencies:
+  lints: ^6.0.0
+  test: ^1.24.0

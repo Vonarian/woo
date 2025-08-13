@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="woo API docs, for the Dart programming language.">
+  <title>woo - Dart API docs</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="static-assets/github.css?v1">
+  <link rel="stylesheet" href="static-assets/styles.css?v1">
+  <link rel="icon" href="static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li class="self-crumb">woo package</li>
+  </ol>
+  <div class="self-name">woo</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+  <div id="dartdoc-main-content" class="main-content">
+      
+<section class="desc markdown">
+  <h2 id="woo">Woo</h2>
+<p>The most beautiful way to greet the world. A tiny Dart package that models a friendly being named Woo — an eternal angel and a good dev — with a simple, fun API.</p>
+<h3 id="installation">Installation</h3>
+<p>Add the package to your project:</p>
+<pre class="language-bash"><code class="language-bash">dart pub add woo
+</code></pre>
+<p>Import it where you need it:</p>
+<pre class="language-dart"><code class="language-dart">import 'package:woo/woo.dart';
+</code></pre>
+<h3 id="quick-start">Quick start</h3>
+<pre class="language-dart"><code class="language-dart">import 'package:woo/woo.dart';
+
+void main() {
+  final woo = Woo.birth(name: 'Woo', age: 100);
+
+  // Capabilities
+  print(woo.isAngel);   // true
+  print(woo.hasWings);  // true
+  print(woo.isGoodDev); // true
+
+  // Polite greetings
+  woo.sayHello();   // Hello, my name is Woo and I am 100 years old.
+  woo.sayGoodbye(); // Goodbye, my name was Woo and I was 100 years old.
+}
+</code></pre>
+<h3 id="api-overview">API overview</h3>
+<ul>
+<li>
+<p><strong><code>Human</code></strong>: Base contract with identity and greeting.</p>
+<ul>
+<li><strong><code>name</code></strong>: String</li>
+<li><strong><code>age</code></strong>: int</li>
+<li><strong><code>sayHello()</code></strong></li>
+</ul>
+</li>
+<li>
+<p><strong><code>Angel</code></strong>: Capability contract for angelic beings.</p>
+<ul>
+<li><strong><code>isAngel</code></strong>: bool</li>
+<li><strong><code>hasWings</code></strong>: bool</li>
+</ul>
+</li>
+<li>
+<p><strong><code>Dev</code></strong>: A concrete <code>Human</code> with developer traits.</p>
+<ul>
+<li>Default: <code>isGoodDev</code> is <code>false</code>, <code>sayHello()</code> prints a dev greeting</li>
+<li>Can be used as an interface for “dev-like” capabilities</li>
+</ul>
+</li>
+<li>
+<p><strong><code>Woo</code></strong>: A concrete <code>Human</code> that implements <code>Angel</code> and <code>Dev</code>.</p>
+<ul>
+<li>Constructors: <code>Woo(...)</code>, <code>Woo.birth({required name, required age})</code></li>
+<li>Properties: <code>isAngel == true</code>, <code>hasWings == true</code>, <code>isGoodDev == true</code></li>
+<li>Methods: <code>sayHello()</code>, <code>sayGoodbye()</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="additional-examples">Additional examples</h3>
+<p>Create a regular <code>Dev</code>:</p>
+<pre class="language-dart"><code class="language-dart">final dev = Dev(name: 'Alex', age: 27);
+dev.sayHello();   // Hello, I am a dev!
+print(dev.isGoodDev); // false (by default)
+</code></pre>
+<p>Use <code>Woo</code> directly:</p>
+<pre class="language-dart"><code class="language-dart">const woo = Woo(name: 'Woo', age: 100);
+woo.sayHello();
+</code></pre>
+<h3 id="development">Development</h3>
+<ul>
+<li>Example entry point: <code>example/woo_example.dart</code></li>
+<li>Run static analysis:</li>
+</ul>
+<pre class="language-bash"><code class="language-bash">dart analyze
+</code></pre>
+<ul>
+<li>Run tests:</li>
+</ul>
+<pre class="language-bash"><code class="language-bash">dart test
+</code></pre>
+<h3 id="license">License</h3>
+<p>MIT. See <code>LICENSE</code> if present in the repository, or the repository page at <a href="https://github.com/Vonarian/woo"><code>https://github.com/Vonarian/woo</code></a>.</p>
+</section>
+
+
+      <section class="summary">
+          <h2>Libraries</h2>
+        <dl>
+          <dt id="woo">
+  <span class="name"><a href="woo/">woo</a></span> 
+
+</dt>
+<dd>Support for doing something awesome.
+</dd>
+
+        </dl>
+      </section>
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li class="self-crumb">woo package</li>
+</ol>
+
+    <h5 class="hidden-xs"><span class="package-name">woo</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="woo/">woo</a></li>
+</ol>
+
+  </div>
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div>
+</main>
+<footer>
+  <span class="no-break">
+    woo
+      1.0.0
+  </span>
+  
+</footer>
+
+
+<script src="static-assets/highlight.pack.js?v1"></script>
+<script src="static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+
